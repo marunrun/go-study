@@ -23,6 +23,7 @@ func main() {
 			numbers2[i+1] += e
 		}
 	}
+	// 7 3 5 7 9 11
 	fmt.Println(numbers2)
 	fmt.Println()
 
@@ -36,5 +37,6 @@ func main() {
 			numbers3[i+1] += e
 		}
 	}
+	// 22 3 6 10 15 21
 	fmt.Println(numbers3)
 }

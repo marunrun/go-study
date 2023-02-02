@@ -41,7 +41,7 @@ func main() {
 		ts1 := time.Now()
 		conn, err := net.DialTimeout(args.network, args.address, args.timeout)
 		ts2 := time.Now()
-		fmt.Printf("Elapsed time: %s\n", time.Duration(ts2.Sub(ts1)))
+		fmt.Printf("Elapsed time: %s\n", ts2.Sub(ts1))
 		if err != nil {
 			fmt.Printf("dial error: %v\n", err)
 			fmt.Println()

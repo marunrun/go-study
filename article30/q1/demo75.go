@@ -20,7 +20,7 @@ func main() {
 
 	// 示例2。
 	fmt.Println("Grow the builder ...")
-	builder1.Grow(10)
+	builder1.Grow(20)
 	fmt.Printf("The length of contents in the builder is %d.\n", builder1.Len())
 	fmt.Println()
 

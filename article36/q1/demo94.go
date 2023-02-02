@@ -26,17 +26,17 @@ func main() {
 	myTransport := &http.Transport{
 		Proxy: http.ProxyFromEnvironment,
 		DialContext: (&net.Dialer{
-			Timeout:   15 * time.Second,
-			KeepAlive: 15 * time.Second,
+			Timeout:   5 * time.Second,
+			KeepAlive: 5 * time.Second,
 			DualStack: true,
 		}).DialContext,
 		MaxConnsPerHost:       2,
-		MaxIdleConns:          10,
+		MaxIdleConns:          2,
 		MaxIdleConnsPerHost:   2,
-		IdleConnTimeout:       30 * time.Second,
+		IdleConnTimeout:       2 * time.Second,
 		ResponseHeaderTimeout: 0,
-		ExpectContinueTimeout: 1 * time.Second,
-		TLSHandshakeTimeout:   10 * time.Second,
+		ExpectContinueTimeout: 2 * time.Second,
+		TLSHandshakeTimeout:   2 * time.Second,
 	}
 	// 你可以改变myClient中的各个字段的值，
 	// 并观察后面的输出会有什么不同。

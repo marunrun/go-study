@@ -66,9 +66,13 @@ func main() {
 		}(i, &buffer)
 	}
 
-	for i := 0; i < max1; i++ {
-		<-sign
+	select {
+	case <-sign:
 	}
+
+	//for i := 0; i < max1; i++ {
+	//	<-sign
+	//}
 	data, err := ioutil.ReadAll(&buffer)
 	if err != nil {
 		log.Fatalf("fatal error: %s", err)

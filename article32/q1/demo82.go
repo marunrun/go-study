@@ -56,7 +56,7 @@ func main() {
 	fmt.Println("示例3=============================")
 	reader1.Reset(comment)
 	offset2 := int64(56)
-	num2 := int64(72)
+	num2 := int64(70)
 	fmt.Printf("New a section reader with reader1, offset %d and number %d ...\n", offset2, num2)
 	reader3 := io.NewSectionReader(reader1, offset2, num2) //起始位置 + 数量
 	buf3 := make([]byte, 20)
@@ -79,6 +79,7 @@ func main() {
 		n, err = reader4.Read(buf4)
 		executeIfNoErr(err, func() {
 			fmt.Printf("Read(%d): %q\n", n, buf4[:n])
+			fmt.Printf("Writer : %q\n", writer1.String())
 		})
 	}
 	fmt.Println()

@@ -16,7 +16,6 @@ func main() {
 	fmt.Printf("The number: %d\n", num)
 	atomic.AddUint32(&num, ^uint32(-(-3)-1))
 	fmt.Printf("The number: %d\n", num)
-
 	fmt.Printf("The two's complement of %d: %b\n",
 		delta, uint32(delta)) // -3的补码。
 	fmt.Printf("The equivalent: %b\n", ^uint32(-(-3)-1)) // 与-3的补码相同。

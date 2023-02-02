@@ -8,7 +8,33 @@ import (
 )
 
 func main() {
-	coordinateWithContext()
+	//coordinateWithContext()
+
+	ctx, cancelFunc := context.WithCancel(context.Background())
+
+	go watch(ctx, "[监控1]")
+	go watch(ctx, "[监控2]")
+	go watch(ctx, "[监控3]")
+	go watch(ctx, "[监控4]")
+
+	time.Sleep(10 * time.Second)
+	fmt.Println("可以通知监控取消了")
+	cancelFunc()
+
+	time.Sleep(5 * time.Second)
+}
+
+func watch(ctx context.Context, name string) {
+	for {
+		select {
+		case <-ctx.Done():
+			fmt.Println(name, "监控结束")
+			return
+		default:
+			fmt.Println(name, "goroutine监控中...")
+			time.Sleep(2 * time.Second)
+		}
+	}
 }
 
 func coordinateWithContext() {

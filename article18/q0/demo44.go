@@ -8,6 +8,7 @@ import (
 func echo(request string) (response string, err error) {
 	if request == "" {
 		err = errors.New("empty content")
+		err = fmt.Errorf("aaa %v", "empty")
 		return
 	}
 	response = fmt.Sprintf("echo: %s", request)
