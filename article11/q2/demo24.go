@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	example1()
+	//example1()
 	example2()
 }
 
@@ -45,7 +45,7 @@ func example2() {
 	case _, ok := <-intChan:
 		if !ok {
 			fmt.Println("The candidate case is closed.")
-			break
+			return
 		}
 		fmt.Println("The candidate case is selected.")
 	}

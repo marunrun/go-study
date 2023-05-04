@@ -7,7 +7,6 @@ func main() {
 	ch1 <- 0
 	ch1 <- 1
 	ch1 <- 3
-	//ch1 <- 4
 	fmt.Println(len(ch1))
 
 	elem1 := <-ch1 //先进先出
